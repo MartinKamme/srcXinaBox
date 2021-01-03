@@ -884,7 +884,9 @@ bool logXK07::LogSI01(void)
 {DataFile = SD.open(DataFileName, FILE_WRITE);
     OD01.println("SI01 called");
     LogRuntime();
+    OD01.println("Past LogRuntime");
     global.watchdog();
+    OD01.println("Past Watchdog");
     xchipi2caddr addr;
     if (xCore.ping(addr.SI01_ADDRESS_1) && xCore.ping(addr.SI01_ADDRESS_2))
     {OD01.println("1. if");
