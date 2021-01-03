@@ -599,7 +599,7 @@ void logXK07::LogRuntime(void)
     OD01.println("After4 wathch");
     char buf[21];
     sprintf(buf, "%02lu:%02lu:%02lu", runHours, runMinutes, runSeconds);
-    OD01.println("Buffer man")
+    OD01.println("Buffer man");
     logData(log_index++, buf);
     OD01.println("Logging");
 }
