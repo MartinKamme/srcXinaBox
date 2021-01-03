@@ -24,8 +24,8 @@
 #include <xRL0x.h>
 #include <xSG33.h>
 #include "xOD01.h"
-#include <utility/uiXK07.h> //
-#include "utility/xk07global.h" //
+#include <uiXK07.h> //utility/
+#include "xk07global.h" //utility/
 
 const String headers[][2]{// TODO - could be improved by using seperate arrays for each sensor, or using vectors
 						  {"Runtime", ""},

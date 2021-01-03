@@ -11,12 +11,12 @@
 
 #include <Arduino.h> // must be here
 
-#include "utility/uiXK07.h" //
+#include "uiXK07.h" //utility/
 #include <xCS11_SDU.h>
 #include "comXK07.h"
 #include "devXK07.h"
 #include "logXK07.h"
-#include "utility/xk07global.h" //
+#include "xk07global.h" //utility/
 
 #define MODE_SAT 0x10
 #define MODE_LOG 0x20
