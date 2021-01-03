@@ -588,19 +588,20 @@ void logXK07::logData(int index, String data)
  *
  */
 void logXK07::LogRuntime(void)
-{OD01.println("B4 wathch");
     global.watchdog();
+    {OD01.println("B4 wathch");
+    unsigned long allSeconds = millis() / 1000;
+
+    unsigned long runHours = allSeconds / 3600;
+    unsigned long secsRemaining = allSeconds % 3600;
+    unsigned long runMinutes = secsRemaining / 60;
+    unsigned long runSeconds = secsRemaining % 60;
     OD01.println("After4 wathch");
-    int allSeconds = millis() / 1000;
-
-    int runHours = allSeconds / 3600;
-    int secsRemaining = allSeconds % 3600;
-    int runMinutes = secsRemaining / 60;
-    int runSeconds = secsRemaining % 60;
-
     char buf[21];
-    sprintf(buf, "%02d:%02d:%02d", runHours, runMinutes, runSeconds);
+    sprintf(buf, "%02lu:%02lu:%02lu", runHours, runMinutes, runSeconds);
+    OD01.println("Buffer man")
     logData(log_index++, buf);
+    OD01.println("Logging");
 }
 
 /**
