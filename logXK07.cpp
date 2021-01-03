@@ -497,12 +497,16 @@ void logXK07::logData(int index, char data[])
     {
         if (DataFile)
         {
+            OD01.println("b4 %s", data);
             DataFile.print(data);
             DataFile.print(",");
+            OD01.println("aft datafile");
             if (ENABLE_EXCEL_LOG)
             {
+                OD01.println("Serial print");
                 Serial1.print(data);
                 Serial1.print(",");
+                OD01.println("After serial");
             }
         }
     }
