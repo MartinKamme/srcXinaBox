@@ -44,7 +44,7 @@ OD01.println("3.WDT");
                 global.watchdog();
                 if (writeHeaders()) // write all the headers to the first line of the file
                 {OD01.println("Headers Written");
-                  DataFile = SD.open(DataFileName, FILE_WRITE);
+                  //DataFile = SD.open(DataFileName, FILE_WRITE);
                   OD01.print("Datafile Opened");
                   delay(2000);
                     return 0xFF;
@@ -881,7 +881,7 @@ bool logXK07::LogPB04(void)
  * @return false
  */
 bool logXK07::LogSI01(void)
-{
+{DataFile = SD.open(DataFileName, FILE_WRITE);
   OD01.println("1. LogSI01");
     global.watchdog();
     xchipi2caddr addr;
