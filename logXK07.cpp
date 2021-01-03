@@ -421,8 +421,7 @@ void logXK07::logData(int index, float data)
     if (SD_CARD_INITIALIZED)
     {
         if (DataFile)
-        {OD01.println("Writing Data");
-         OD01.println(data);
+        {
             DataFile.print(data);
             DataFile.print(",");
             /*if (ENABLE_EXCEL_LOG)
@@ -888,10 +887,10 @@ bool logXK07::LogSI01(void)
     global.watchdog();
     xchipi2caddr addr;
     if (xCore.ping(addr.SI01_ADDRESS_1) && xCore.ping(addr.SI01_ADDRESS_2))
-    {
+    {OD01.println("1. if");
         xSI01 SI01;
         if (SI01.begin())
-        {
+        {OD01.println("2. if");
             SI01.poll();
             logData(log_index++, SI01.getRoll());
             logData(log_index++, SI01.getPitch());
