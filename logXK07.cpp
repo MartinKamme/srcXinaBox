@@ -424,11 +424,11 @@ void logXK07::logData(int index, float data)
         {
             DataFile.print(data);
             DataFile.print(",");
-            if (ENABLE_EXCEL_LOG)
+            /*if (ENABLE_EXCEL_LOG)
             {
                 OD01.print(data);
                 OD01.println(",");
-            }
+            }*/
         }
     }
 }
@@ -882,14 +882,14 @@ bool logXK07::LogPB04(void)
  */
 bool logXK07::LogSI01(void)
 {DataFile = SD.open(DataFileName, FILE_WRITE);
-  OD01.println("1. LogSI01");
-    global.watchdog();
+  LogRuntime();
+    //global.watchdog();
     xchipi2caddr addr;
     if (xCore.ping(addr.SI01_ADDRESS_1) && xCore.ping(addr.SI01_ADDRESS_2))
-    {OD01.println("2. LogSI02");
+    {
         xSI01 SI01;
         if (SI01.begin())
-        {OD01.println("3. LogSI03");
+        {
             SI01.poll();
             logData(log_index++, SI01.getRoll());
             logData(log_index++, SI01.getPitch());
@@ -903,11 +903,12 @@ bool logXK07::LogSI01(void)
             logData(log_index++, SI01.getAX());
             logData(log_index++, SI01.getAY());
             logData(log_index++, SI01.getAZ());
+            DataFile.println();
             DataFile.close();
             return true;
         }
         else
-        {
+        {OD01.print("1. SI01");
             logData(log_index++, "");
             logData(log_index++, "");
             logData(log_index++, "");
@@ -924,7 +925,7 @@ bool logXK07::LogSI01(void)
         }
     }
     else if (xCore.ping(addr.SI01_ADDRESS_1_ALT) || xCore.ping(addr.SI01_ADDRESS_2_ALT))
-    {
+    {OD01.println("2. SI01");
         debugPrint("[ERROR] [SI01] Alternate I2C Address is being used.");
         writeInfo("[ERROR] [SI01] Alternate I2C Address is being used.");
         logData(log_index++, "");
@@ -942,7 +943,7 @@ bool logXK07::LogSI01(void)
         return false;
     }
     else
-    {
+    {OD01.println("3. SI01");
 
         logData(log_index++, "");
         logData(log_index++, "");

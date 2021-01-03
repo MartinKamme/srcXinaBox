@@ -29,9 +29,9 @@
 
 const String headers[][2]{// TODO - could be improved by using seperate arrays for each sensor, or using vectors
 						  {"Runtime", ""},
-						  {"Date", ""},
+						  /*{"Date", ""},
 						  {"Time", "(UTC)"},
-						  /*{"Latitude", ""},
+						  {"Latitude", ""},
 						  {"Longitude", ""},
 						  {"GPS Altitude", "(m)"},
 						  {"HDOP", ""},
@@ -61,8 +61,9 @@ const String headers[][2]{// TODO - could be improved by using seperate arrays f
 						  {"Gyroscope Z-Axis", "(deg/s)"},
 						  {"Accelerometer X-Axis", "(g)"},
 						  {"Accelerometer Y-Axis", "(g)"},
-						  {"Accelerometer Z-Axis", "(g)"},
-						  //{"Received RSSI", "(dB)"}};
+						  {"Accelerometer Z-Axis", "(g)"}};//,
+						  //{"Received RSSI", "(dB)"}
+
 
 const unsigned int HeaderArray_length{sizeof(headers) / sizeof(headers[0])};
 
