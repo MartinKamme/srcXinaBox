@@ -422,7 +422,7 @@ void logXK07::logData(int index, float data)
     {
         if (DataFile)
         {OD01.println("Writing Data");
-        OD01.println(data);
+         OD01.println(data);
             DataFile.print(data);
             DataFile.print(",");
             /*if (ENABLE_EXCEL_LOG)
@@ -883,8 +883,9 @@ bool logXK07::LogPB04(void)
  */
 bool logXK07::LogSI01(void)
 {DataFile = SD.open(DataFileName, FILE_WRITE);
-  LogRuntime();
-    //global.watchdog();
+    OD01.println("SI01 called");
+    LogRuntime();
+    global.watchdog();
     xchipi2caddr addr;
     if (xCore.ping(addr.SI01_ADDRESS_1) && xCore.ping(addr.SI01_ADDRESS_2))
     {
