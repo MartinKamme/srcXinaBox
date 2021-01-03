@@ -497,7 +497,7 @@ void logXK07::logData(int index, char data[])
     {
         if (DataFile)
         {
-            OD01.println("b4 %s", data);
+            OD01.println("b4");
             DataFile.print(data);
             DataFile.print(",");
             OD01.println("aft datafile");
