@@ -416,12 +416,13 @@ uint8_t logXK07::logAllSensors(int rssi, int id)
  */
 void logXK07::logData(int index, float data)
 {
-    //global.watchdog();
+    global.watchdog();
     // Log To SD Card
     if (SD_CARD_INITIALIZED)
     {
         if (DataFile)
-        {
+        {OD01.println("Writing Data");
+        OD01.println(data);
             DataFile.print(data);
             DataFile.print(",");
             /*if (ENABLE_EXCEL_LOG)
