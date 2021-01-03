@@ -884,7 +884,7 @@ bool logXK07::LogPB04(void)
 bool logXK07::LogSI01(void)
 {DataFile = SD.open(DataFileName, FILE_WRITE);
     OD01.println("SI01 called");
-    LogRuntime();
+    //LogRuntime();
     OD01.println("Past LogRuntime");
     global.watchdog();
     OD01.println("Past Watchdog");
