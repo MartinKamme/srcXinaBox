@@ -31,7 +31,7 @@ const String headers[][2]{// TODO - could be improved by using seperate arrays f
 						  {"Runtime", ""},
 						  {"Date", ""},
 						  {"Time", "(UTC)"},
-						  {"Latitude", ""},
+						  /*{"Latitude", ""},
 						  {"Longitude", ""},
 						  {"GPS Altitude", "(m)"},
 						  {"HDOP", ""},
@@ -49,7 +49,7 @@ const String headers[][2]{// TODO - could be improved by using seperate arrays f
 						  {"eC02", "(ppm)"},
 						  {"TVOC", "(ppb)"},
 						  {"Current", "(mA)"},
-						  {"Voltage", "(V)"},
+						  {"Voltage", "(V)"},*/
 						  {"Roll", "(deg)"},
 						  {"Pitch", "(deg)"},
 						  {"G-Force", "(g)"},
@@ -62,7 +62,7 @@ const String headers[][2]{// TODO - could be improved by using seperate arrays f
 						  {"Accelerometer X-Axis", "(g)"},
 						  {"Accelerometer Y-Axis", "(g)"},
 						  {"Accelerometer Z-Axis", "(g)"},
-						  {"Received RSSI", "(dB)"}};
+						  //{"Received RSSI", "(dB)"}};
 
 const unsigned int HeaderArray_length{sizeof(headers) / sizeof(headers[0])};
 
