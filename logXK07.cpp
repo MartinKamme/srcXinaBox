@@ -588,8 +588,8 @@ void logXK07::logData(int index, String data)
  *
  */
 void logXK07::LogRuntime(void)
-    global.watchdog();
-    {OD01.println("B4 wathch");
+{    global.watchdog();
+    OD01.println("B4 wathch");
     unsigned long allSeconds = millis() / 1000;
 
     unsigned long runHours = allSeconds / 3600;
@@ -885,7 +885,7 @@ bool logXK07::LogPB04(void)
 bool logXK07::LogSI01(void)
 {DataFile = SD.open(DataFileName, FILE_WRITE);
     OD01.println("SI01 called");
-    //LogRuntime();
+    LogRuntime();
     OD01.println("Past LogRuntime");
     global.watchdog();
     OD01.println("Past Watchdog");
