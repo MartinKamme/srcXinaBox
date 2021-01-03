@@ -588,8 +588,9 @@ void logXK07::logData(int index, String data)
  *
  */
 void logXK07::LogRuntime(void)
-{
+{OD01.println("B4 wathch");
     global.watchdog();
+    OD01.println("After4 wathch");
     int allSeconds = millis() / 1000;
 
     int runHours = allSeconds / 3600;
