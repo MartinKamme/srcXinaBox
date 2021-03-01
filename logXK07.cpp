@@ -4,6 +4,7 @@
  * @brief Class for handling data logging on XK07 Flight Station
  */
 #include "logXK07.h"
+#include "xOD01.h"
 xOD01 OD01;
 
 #if defined(ARDUINO_SAMD_ZERO)
@@ -504,8 +505,8 @@ void logXK07::logData(int index, char data[])
             if (ENABLE_EXCEL_LOG)
             {
                 OD01.println("Serial print");
-                Serial1.print(data);
-                Serial1.print(",");
+                DataFile.print(data);
+                DataFile.print(",");
                 OD01.println("After serial");
             }
         }
