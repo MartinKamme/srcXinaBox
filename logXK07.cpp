@@ -505,8 +505,8 @@ void logXK07::logData(int index, char data[])
             if (ENABLE_EXCEL_LOG)
             {
                 OD01.println("Serial print");
-                DataFile.print(data);
-                DataFile.print(",");
+                //DataFile.print(data);
+                //DataFile.print(",");
                 OD01.println("After serial");
             }
         }
